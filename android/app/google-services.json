@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "322292448540",
+    "project_id": "akat-insurance",
+    "storage_bucket": "akat-insurance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322292448540:android:f0550b9153d43d6fbdced9",
+        "android_client_info": {
+          "package_name": "com.akat.insurance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322292448540-t7dhijhnok87q8vgjdsg5qmnv7qm10v3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4jrtaeLCcl1Yy-xcp_dq9I-CfNdrz9oE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322292448540-t7dhijhnok87q8vgjdsg5qmnv7qm10v3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "322292448540-lipkrt5mk4n4aahjkvrc2g1v2h9b9nha.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.akat.insurance"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322292448540:android:4a5edc3acabe4379bdced9",
+        "android_client_info": {
+          "package_name": "com.thavisub.laopt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "322292448540-t7dhijhnok87q8vgjdsg5qmnv7qm10v3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4jrtaeLCcl1Yy-xcp_dq9I-CfNdrz9oE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "322292448540-t7dhijhnok87q8vgjdsg5qmnv7qm10v3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "322292448540-lipkrt5mk4n4aahjkvrc2g1v2h9b9nha.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.akat.insurance"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
