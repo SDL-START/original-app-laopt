@@ -50,7 +50,8 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.thavisub.laopt"
+        // applicationId "com.thavisub.laopt"
+        applicationId "com.insurance.thavisub"
         minSdkVersion 21
         multiDexEnabled true
         targetSdkVersion flutter.targetSdkVersion

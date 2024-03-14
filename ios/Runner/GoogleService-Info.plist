@@ -2,22 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CLIENT_ID</key>
-	<string>322292448540-ekreaqfapdnkdnn9stqleumb127thb1g.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.322292448540-ekreaqfapdnkdnn9stqleumb127thb1g</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAZJDJQ1mtWSxYlTcBOOI6Ndq878Q04tIg</string>
+	<string>AIzaSyCst2agDhI9j297tt6ZWP7HY6h04mcm1rM</string>
 	<key>GCM_SENDER_ID</key>
-	<string>322292448540</string>
+	<string>25141980163</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.thavisubinsurancebroker.laopt</string>
+	<string>com.thavisubgroup.applaopt</string>
 	<key>PROJECT_ID</key>
-	<string>akat-insurance</string>
+	<string>thavisub-51b2d</string>
 	<key>STORAGE_BUCKET</key>
-	<string>akat-insurance.appspot.com</string>
+	<string>thavisub-51b2d.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:322292448540:ios:9385cbcca7752c97bdced9</string>
-	<key>DATABASE_URL</key>
-	<string>https://akat-insurance-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+	<string>1:25141980163:ios:c28d6265dbc4338c8df236</string>
 </dict>
 </plist>
