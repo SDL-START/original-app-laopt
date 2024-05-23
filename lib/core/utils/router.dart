@@ -116,9 +116,7 @@ class AppRoute {
         return _materialRoute(
           providers: [
             BlocProvider<AppCubit>(
-              create: (context) => getIt<AppCubit>()..initialApp()
-                
-            ),
+                create: (context) => getIt<AppCubit>()..initialApp()),
           ],
           child: const AppPage(),
         );
@@ -239,7 +237,9 @@ class AppRoute {
       case myWebviewRoute:
         final params = settings.arguments as WebviewParams;
         return _materialRoute(
-            child: PTWebviewPagw(params: params), providers: []);
+          child: PTWebviewPagw(params: params),
+          providers: [],
+        );
       case hospitalRoute:
         return _materialRoute(child: const HospitalServicePage(), providers: [
           BlocProvider<HospitalCubit>.value(

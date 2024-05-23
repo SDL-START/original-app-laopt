@@ -81,7 +81,7 @@ class TabPage extends StatelessWidget {
                     height: 30,
                   ),
                   tooltip: LocaleKeys.kChat.tr(),
-                ),  
+                ),
                 BottomNavigationBarItem(
                   activeIcon: Image.asset(
                     AppImages.settings_active,
@@ -106,13 +106,12 @@ class TabPage extends StatelessWidget {
                     return MultiBlocProvider(
                       providers: [
                         BlocProvider<HomeCubit>(
-                          create: (context) => getIt<HomeCubit>()..initial()
-                        ),
+                            create: (context) => getIt<HomeCubit>()..initial()),
                         BlocProvider<CertificateCubit>(
                           create: (context) => getIt<CertificateCubit>(),
                         )
                       ],
-                      child: const HomePage(),
+                      child: HomePage(),
                     );
                   case 1:
                     return MultiBlocProvider(
@@ -129,8 +128,8 @@ class TabPage extends StatelessWidget {
                     return MultiBlocProvider(
                       providers: [
                         BlocProvider<SupportCubit>(
-                          create: (context) => getIt<SupportCubit>()
-                            ..getTicket(),
+                          create: (context) =>
+                              getIt<SupportCubit>()..getTicket(),
                         )
                       ],
                       child: const ListTicketPage(),

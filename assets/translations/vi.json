@@ -55,8 +55,8 @@
     "kRelation":"Quan hệ",
     "kIncludeMe":"bao gồm tôi",
     "kAcceptedTerms":"Tôi chấp nhận các điều khoản và điều kiện",
-    "kVaccine":"vắc xin",
-    "kRTPCR":"RTPCR",
+    "kVaccine":"hộ chiếu",
+    "kRTPCR":"Một tài liệu khác...",
     "kCancel":"Hủy bỏ",
     "kPolicySchedule":"Lịch trình chính sách",
     "kStatus":"Trạng thái",
@@ -100,14 +100,27 @@
     "kDontHaveAnAccount":"Nếu bạn chưa có tài khoản?",
     "kWorkPlace":"nơi làm việc",
     "kSupport":"Ủng hộ",
-    "kLocation":"Location",
+    "kLocation":"Vị trí",
     "kListTicket":"All ticket",
     "kOk": "Ok",
-    "kWarnning":"Warnning",
+    "kWarnning":"Cảnh báo",
     "kCancelTicket":"Do you want to cancel this ticket?",
-    "kAccept":"Accept",
-    "kComplete":"Complete",
-    "kConfirmation":"Confirmation",
-    "kDescription":"Description",
-    "kTicketDetail":"Ticket detail"
+    "kAccept":"Chấp nhận",
+    "kComplete":"Hoàn thành",
+    "kConfirmation":"Xác nhận",
+    "kDescription":"Sự miêu tả",
+    "kTicketDetail":"Chi tiết vé",
+    "kUploadyourpassport":"Tải ảnh hộ chiếu của bạn lên",
+    "kUploadyourvisa":"Tải ảnh thị thực của bạn lên",
+    "kDocumentphoto":"Vui lòng tải lên ảnh tài liệu của bạn",
+    "kDocuments":"Tải lên Tài liệu",
+    "kService":"dịch vụ của chúng tôi",
+    "KTouristplaces":"Những nơi phổ biến",
+    "KEmpty":"Trống",
+    "KPopularplace":"địa điểm",
+    "kdetails":"chi tiết"
+
+
+
+
 }

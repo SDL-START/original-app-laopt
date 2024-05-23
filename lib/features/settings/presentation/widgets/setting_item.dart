@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class SettingsItem extends StatelessWidget {
   final IconData? icon;
   final String? title;
@@ -15,15 +16,15 @@ class SettingsItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(4),
+      // padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.8),
-          borderRadius: BorderRadius.circular(8)),
+          borderRadius: BorderRadius.circular(5)),
       child: ListTile(
         leading: Icon(
           icon,
           color: Colors.black,
-          size: 25,
+          size: 20,
         ),
         title: Text(
           title ?? '',

@@ -1,4 +1,4 @@
-package com.thavisub.laopt
+package com.insurance.thavisub
 
 import io.flutter.embedding.android.FlutterActivity
 

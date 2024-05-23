@@ -20,6 +20,7 @@ class UploadDocumentPage extends StatelessWidget {
     final cubit = context.read<BuyInsuranceCubit>();
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(LocaleKeys.kUploadDocument.tr()),
       ),
       body: BlocBuilder<BuyInsuranceCubit, BuyInsuranceState>(
@@ -32,14 +33,17 @@ class UploadDocumentPage extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  const Text("Please upload you documnet photo"),
+                  // const Text("Please upload you documnet photo"),
+                  Text(LocaleKeys.kDocumentphoto.tr()),
+
                   // Text(
                   //     "If you do not want to see this page please update your profile"),
                   const SizedBox(height: 20),
                   UploadDocsWidget(
                     isRequired: true,
                     label: LocaleKeys.kPassportNo.tr(),
-                    description: "Upload your passport photo",
+                    // description: "Upload your passport photo",
+                    description: LocaleKeys.kUploadyourpassport.tr(),
                     url: state.passportPhoto,
                     onTap: () {
                       AppNavigator.showModalPopupPhoto(
@@ -60,7 +64,7 @@ class UploadDocumentPage extends StatelessWidget {
                   ),
                   UploadDocsWidget(
                     label: LocaleKeys.kVaccine.tr(),
-                    description: "Upload your vaccine card photo",
+                    description: LocaleKeys.kUploadyourvisa.tr(),
                     url: state.vaccinePhoto,
                     onTap: () {
                       AppNavigator.showModalPopupPhoto(
@@ -84,7 +88,7 @@ class UploadDocumentPage extends StatelessWidget {
                   ),
                   UploadDocsWidget(
                     label: LocaleKeys.kRTPCR.tr(),
-                    description: "Upload your RTPCR card photo",
+                    description: LocaleKeys.kDocuments.tr(),
                     url: state.rtpcrPhoto,
                     onTap: () {
                       AppNavigator.showModalPopupPhoto(

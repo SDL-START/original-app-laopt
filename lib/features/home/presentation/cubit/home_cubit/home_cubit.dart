@@ -58,7 +58,7 @@ class HomeCubit extends Cubit<HomeState> {
       emit(state.copyWith(
           status: DataStatus.failure, error: menu.getLeft()?.msg));
     } else {
-      if(super.isClosed)return;
+      if (super.isClosed) return;
       emit(state.copyWith(
         status: DataStatus.success,
         listMenu: menu.getRight() ?? [],

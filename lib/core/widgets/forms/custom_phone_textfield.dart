@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:intl_phone_field/phone_number.dart';
 
-
 class CustomPhoneTextfield extends StatelessWidget {
   final TextEditingController? controller;
   final String? initialCountryCode;
@@ -46,7 +45,10 @@ class CustomPhoneTextfield extends StatelessWidget {
             color: Colors.black,
             fontSize: 16,
           ),
-          dropdownTextStyle: const TextStyle(color: Colors.black, fontSize: 16),
+          dropdownTextStyle: const TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
           flagsButtonPadding: EdgeInsets.zero,
           decoration: InputDecoration(
             hintText: hintText,

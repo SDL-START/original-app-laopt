@@ -1,4 +1,5 @@
 import 'package:flutter_flavor/flutter_flavor.dart';
+
 class APIPath {
   //Get flavor variable
   static String baseUrl = FlavorConfig.instance.variables['baseUrl'];
@@ -45,18 +46,17 @@ class APIPath {
   static const String resetPassword = '/forgotpassword/confirm';
 
   //SOS Service
-  static const String request ="/sosservice/request";
+  static const String request = "/sosservice/request";
   static const String sosPending = '/sosservice/pending';
   static const String sosStaff = '/sosservice/staff?userId';
-  static const String ticketHistories="/sosservice/histories?userId";
-  static const String ticketDetail="/sosservice/ticketInfo?ticketId";
-  static const String cancelTicket="/sosservice/canceled";
-  static const String acepted="/sosservice/accepted";
-  static const String completed="/sosservice/completed";
-  static const String getMessage="/sosmessage/?ticketId";
-  static const String sendMessage="/sosmessage/send";
-  static const String userCancel="/sosservice/cancel?ticketId";
-  static const String location="/location/live?messageId";
-  static const String saveLocation="/location/save";
-  
+  static const String ticketHistories = "/sosservice/histories?userId";
+  static const String ticketDetail = "/sosservice/ticketInfo?ticketId";
+  static const String cancelTicket = "/sosservice/canceled";
+  static const String acepted = "/sosservice/accepted";
+  static const String completed = "/sosservice/completed";
+  static const String getMessage = "/sosmessage/?ticketId";
+  static const String sendMessage = "/sosmessage/send";
+  static const String userCancel = "/sosservice/cancel?ticketId";
+  static const String location = "/location/live?messageId";
+  static const String saveLocation = "/location/save";
 }

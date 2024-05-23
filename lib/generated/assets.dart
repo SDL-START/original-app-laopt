@@ -270,30 +270,41 @@ class Assets {
   static const String imagesEmptyBox = 'assets/images/empty_box.svg';
   static const String imagesEn = 'assets/images/en.png';
   static const String imagesHealth = 'assets/images/health.jpg';
-  static const String imagesHealthInsurance = 'assets/images/health-insurance.png';
+  static const String imagesHealthInsurance =
+      'assets/images/health-insurance.png';
   static const String imagesInformative = 'assets/images/informative.png';
   static const String imagesLa = 'assets/images/la.png';
-  static const String imagesLogoInsurance = 'assets/images/logo-insurance.png';
-  static const String imagesPlaceholderImage = 'assets/images/placeholder_image.png';
+  static const String imagesLogoInsurance = 'assets/images/log.png';
+  static const String imagesPlaceholderImage =
+      'assets/images/placeholder_image.png';
   static const String imagesPolicy = 'assets/images/policy.jpg';
-  static const String imagesSocialResponsibility = 'assets/images/social-responsibility.png';
+  static const String imagesSocialResponsibility =
+      'assets/images/social-responsibility.png';
   static const String imagesSos = 'assets/images/sos.jpg';
   static const String imagesTh = 'assets/images/th.png';
   static const String imagesTravelGuide = 'assets/images/travel-guide.png';
   static const String imagesUnknown = 'assets/images/unknown.png';
   static const String imagesVn = 'assets/images/vn.png';
-  static const String notoSansLaoNotoSansLaoBlack = 'assets/fonts/NotoSansLao/NotoSansLao-Black.ttf';
-  static const String notoSansLaoNotoSansLaoBold = 'assets/fonts/NotoSansLao/NotoSansLao-Bold.ttf';
-  static const String notoSansLaoNotoSansLaoExtraBold = 'assets/fonts/NotoSansLao/NotoSansLao-ExtraBold.ttf';
-  static const String notoSansLaoNotoSansLaoExtraLight = 'assets/fonts/NotoSansLao/NotoSansLao-ExtraLight.ttf';
-  static const String notoSansLaoNotoSansLaoLight = 'assets/fonts/NotoSansLao/NotoSansLao-Light.ttf';
-  static const String notoSansLaoNotoSansLaoMedium = 'assets/fonts/NotoSansLao/NotoSansLao-Medium.ttf';
-  static const String notoSansLaoNotoSansLaoRegular = 'assets/fonts/NotoSansLao/NotoSansLao-Regular.ttf';
-  static const String notoSansLaoNotoSansLaoSemiBold = 'assets/fonts/NotoSansLao/NotoSansLao-SemiBold.ttf';
-  static const String notoSansLaoNotoSansLaoThin = 'assets/fonts/NotoSansLao/NotoSansLao-Thin.ttf';
+  static const String notoSansLaoNotoSansLaoBlack =
+      'assets/fonts/NotoSansLao/NotoSansLao-Black.ttf';
+  static const String notoSansLaoNotoSansLaoBold =
+      'assets/fonts/NotoSansLao/NotoSansLao-Bold.ttf';
+  static const String notoSansLaoNotoSansLaoExtraBold =
+      'assets/fonts/NotoSansLao/NotoSansLao-ExtraBold.ttf';
+  static const String notoSansLaoNotoSansLaoExtraLight =
+      'assets/fonts/NotoSansLao/NotoSansLao-ExtraLight.ttf';
+  static const String notoSansLaoNotoSansLaoLight =
+      'assets/fonts/NotoSansLao/NotoSansLao-Light.ttf';
+  static const String notoSansLaoNotoSansLaoMedium =
+      'assets/fonts/NotoSansLao/NotoSansLao-Medium.ttf';
+  static const String notoSansLaoNotoSansLaoRegular =
+      'assets/fonts/NotoSansLao/NotoSansLao-Regular.ttf';
+  static const String notoSansLaoNotoSansLaoSemiBold =
+      'assets/fonts/NotoSansLao/NotoSansLao-SemiBold.ttf';
+  static const String notoSansLaoNotoSansLaoThin =
+      'assets/fonts/NotoSansLao/NotoSansLao-Thin.ttf';
   static const String translationsEn = 'assets/translations/en.json';
   static const String translationsLo = 'assets/translations/lo.json';
   static const String translationsVi = 'assets/translations/vi.json';
   static const String translationsZh = 'assets/translations/zh.json';
-
 }

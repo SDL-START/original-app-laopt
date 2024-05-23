@@ -29,7 +29,7 @@ class RegisterPurposePage extends StatelessWidget {
       body: BlocConsumer<RegisterCubit, RegisterState>(
         listener: (context, state) {
           if (state.status == RegisterStatus.PURPOSED) {
-            AppNavigator.navigateTo(AppRoute.setPasswordRoute,params: cubit);
+            AppNavigator.navigateTo(AppRoute.setPasswordRoute, params: cubit);
           }
         },
         builder: (context, state) {
@@ -96,6 +96,16 @@ class RegisterPurposePage extends StatelessWidget {
                             errorText: LocaleKeys.kRequiredField.tr())
                       ]),
                     ),
+                    // PTCustomTextField(
+                    //   name: 'ປະເພດ visa',
+                    //   decoration: InputDecoration(
+                    //     labelText: LocaleKeys.kPassportNo.tr(),
+                    //   ),
+                    //   validator: FormBuilderValidators.compose([
+                    //     FormBuilderValidators.required(
+                    //         errorText: LocaleKeys.kRequiredField.tr())
+                    //   ]),
+                    // ),
                     PTCustomTextField(
                       name: 'city',
                       decoration: InputDecoration(
@@ -149,8 +159,12 @@ class RegisterPurposePage extends StatelessWidget {
         },
         label: Text(
           LocaleKeys.kNext.tr(),
+          selectionColor: Colors.white,
         ),
-        icon: const Icon(Icons.arrow_forward),
+        icon: const Icon(
+          Icons.arrow_forward,
+          color: Colors.white,
+        ),
       ),
     );
   }

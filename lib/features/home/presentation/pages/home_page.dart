@@ -2,11 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:insuranceapp/core/constants/constant.dart';
 import 'package:insuranceapp/core/widgets/loading_widget.dart';
-
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/entities/webview_params.dart';
 import '../../../../core/utils/app_navigator.dart';
@@ -22,6 +23,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<String> imageUrl = [
+      "https://laostravel.com/images/2021/02/plain-of-jars00.jpg",
+      "https://laostravel.com/images/2019/06/Pha-Ngeun-Cliff-2.jpg",
+      // "https://laostravel.com/images/2019/06/Zipline-tours-in-Vang-VIeng.jpg",
+      // "https://laostravel.com/images/2019/06/Laos-Luang-Prabang-Wat-Visoun-1.jpg",
+    ];
+    List<Widget> images = imageUrl
+        .map((url) => Image.network(
+              url,
+              fit: BoxFit.cover,
+            ))
+        .toList();
     final cubit = context.read<HomeCubit>();
     return BlocConsumer<HomeCubit, HomeState>(
       listener: (context, state) {
@@ -44,29 +57,40 @@ class HomePage extends StatelessWidget {
       buildWhen: (previous, current) => previous.listMenu != current.listMenu,
       builder: (context, state) {
         return Scaffold(
+          backgroundColor: Colors.grey[300],
           appBar: AppBar(
+            elevation: 0,
             centerTitle: true,
-            title: Text(LocaleKeys.kHome.tr()),
+            // title: Text(LocaleKeys.kHome.tr()),
+            title: Text(
+              'LAOPT',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
           body: Builder(builder: (context) {
             if (state.status == DataStatus.loading) {
               return const LoadingWidget();
             }
             return Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(Assets.imagesBg), fit: BoxFit.cover),
-              ),
-              child: CustomScrollView(
-                slivers: [
-                  SliverAppBar(
-                    backgroundColor: Colors.transparent,
-                    pinned: false,
-                    snap: false,
-                    floating: false,
-                    expandedHeight: 200,
-                    flexibleSpace: CarouselSlider(
+              // decoration: const BoxDecoration(
+              //   image: DecorationImage(
+              //       image: AssetImage(Assets.imagesBg), fit: BoxFit.cover),
+              // ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 15.0,
+                  right: 15.0,
+                  // top: 5,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CarouselSlider(
                       options: CarouselOptions(
+                        viewportFraction: 1,
+                        aspectRatio: 16 / 9,
                         autoPlay: true,
                         autoPlayInterval: const Duration(seconds: 3),
                         enableInfiniteScroll: true,
@@ -75,84 +99,90 @@ class HomePage extends StatelessWidget {
                       ),
                       items: state.listSlideImage?.map((item) {
                             return Container(
+                              width: double.infinity,
                               margin:
                                   const EdgeInsets.only(top: 20, bottom: 15),
                               child: CachedNetworkImage(
                                 imageUrl: item.image ?? '',
                                 fit: BoxFit.cover,
-                                height: 150,
+                                height: 160,
                               ),
                             );
                           }).toList() ??
                           [],
                     ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Column(
-                      children: [
-                        const Divider(),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 12, right: 12),
-                          child: GridView.builder(
-                            physics: const NeverScrollableScrollPhysics(),
-                            primary: false,
-                            itemCount: state.listMenu?.length,
-                            padding: const EdgeInsets.only(bottom: 80),
-                            shrinkWrap: true,
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 8.0,
-                              mainAxisSpacing: 10.0,
-                              childAspectRatio: 1,
-                            ),
-                            itemBuilder: (context, index) {
-                              final item = state.listMenu?[index];
-                              return InkWell(
-                                child: Container(
-                                  padding: const EdgeInsets.all(8),
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.grey.shade300, width: 1),
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.white.withOpacity(0.6),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      CachedNetworkImage(
-                                        imageUrl: item?.icon ?? '',
-                                        height: 70,
-                                      ),
-                                      const SizedBox(height: 4),
-                                      Text(
-                                        Utils.getTranslate(context, item?.name),
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          fontSize: 20,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                onTap: () {
-                                  if (item?.iswebview == 1) {
-                                    AppNavigator.navigateTo(
-                                        AppRoute.myWebviewRoute,
-                                        params: WebviewParams(
-                                            name: item?.name, url: item?.url));
-                                  } else {
-                                    AppNavigator.navigateTo(item?.url ?? '');
-                                  }
-                                },
-                              );
-                            },
-                          ),
-                        )
-                      ],
+                    Text(
+                      LocaleKeys.kService.tr(),
                     ),
-                  )
-                ],
+                    SizedBox(
+                      height: 15,
+                    ),
+                    GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      primary: false,
+                      itemCount: state.listMenu?.length,
+                      shrinkWrap: true,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        crossAxisCount: 3,
+                        // childAspectRatio: 1,
+                      ),
+                      itemBuilder: (context, index) {
+                        final item = state.listMenu?[index];
+
+                        print("hello {$item}");
+                        return InkWell(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.grey.shade300,
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(
+                                10,
+                              ),
+                              color: Colors.white.withOpacity(
+                                0.6,
+                              ),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CachedNetworkImage(
+                                  imageUrl: item?.icon ?? '',
+                                  height: 70,
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  Utils.getTranslate(context, item?.name),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          ),
+                          onTap: () {
+                            // print("hellow ");
+                            if (item?.iswebview == 1) {
+                              AppNavigator.navigateTo(
+                                AppRoute.myWebviewRoute,
+                                params: WebviewParams(
+                                  name: item?.name,
+                                  //url link travel and policy
+                                  url: item?.url,
+                                ),
+                              );
+                            } else {
+                              AppNavigator.navigateTo(
+                                item?.url ?? '',
+                              );
+                            }
+                          },
+                        );
+                      },
+                    )
+                  ],
+                ),
               ),
             );
           }),
@@ -161,7 +191,9 @@ class HomePage extends StatelessWidget {
                   onPressed: () async {
                     await context.read<CertificateCubit>().onScan();
                   },
-                  child: const Icon(Icons.qr_code_scanner_outlined),
+                  child: Icon(
+                    Icons.qr_code_scanner_outlined,
+                  ),
                 )
               : FloatingActionButton(
                   backgroundColor: Colors.red,
@@ -174,7 +206,13 @@ class HomePage extends StatelessWidget {
                       ? const CircularProgressIndicator(
                           color: AppColors.primaryColor,
                         )
-                      : const Text('SOS'),
+                      : const Text(
+                          'SOS',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                 ),
         );
       },

@@ -23,7 +23,7 @@ class LoginDetail extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    final cubit=context.read<LoginCubit>();
+    final cubit = context.read<LoginCubit>();
     final String title = isPhone
         ? LocaleKeys.kLoginWithPhone.tr()
         : LocaleKeys.kLoginWithEmail.tr();
@@ -60,8 +60,8 @@ class LoginDetail extends StatelessWidget {
                                 context.read<LoginCubit>().emailController,
                             name: 'email',
                             decoration: InputDecoration(
-                              labelText: LocaleKeys.kEmail.tr(),
-                            ),
+                                // labelText: LocaleKeys.KLoginEmail.tr(),
+                                ),
                             validator: FormBuilderValidators.compose([
                               FormBuilderValidators.required<String>(
                                   errorText: LocaleKeys.kRequiredField.tr())
@@ -74,24 +74,25 @@ class LoginDetail extends StatelessWidget {
                             style: Theme.of(context).textTheme.bodyMedium,
                             decoration: InputDecoration(
                               hintText: LocaleKeys.kPhone.tr(),
-                              errorText: state.validated ?null:LocaleKeys.kRequiredField.tr(),
+                              errorText: state.validated
+                                  ? null
+                                  : LocaleKeys.kRequiredField.tr(),
                             ),
                             onChanged: (value) {
                               cubit.onChangedPhoneNumber(value);
                             },
-                            onCountryChanged: (country){
+                            onCountryChanged: (country) {
                               cubit.codeNumber = country.dialCode;
                               cubit.codeString = country.code;
                             },
-
-                            validator:(value){
-                              if(value?.number==null||value?.number==""){
+                            validator: (value) {
+                              if (value?.number == null ||
+                                  value?.number == "") {
                                 return LocaleKeys.kRequiredField.tr();
-                              }else{
+                              } else {
                                 return null;
                               }
-                            }
-                          ),
+                            }),
                     PTCustomTextField(
                       obscureText: true,
                       controller: context.read<LoginCubit>().passwordController,

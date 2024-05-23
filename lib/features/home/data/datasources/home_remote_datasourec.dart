@@ -87,6 +87,7 @@ class HomeRemoteDatasourceImpl implements HomeRemoteDatasource {
         await _pref.saveMenu(menuList: res);
         return res;
       }
+      // ignore: deprecated_member_use
     } on DioError catch (e) {
       throw ServerException(e.message);
     } on CacheException catch (er) {
@@ -100,6 +101,7 @@ class HomeRemoteDatasourceImpl implements HomeRemoteDatasource {
       final currentUser = await getCurrenUser();
       final res = await networkCall.uploadFile(currentUser?.token ?? '', file);
       return res;
+      // ignore: deprecated_member_use
     } on DioError catch (er) {
       throw ServerException(er.message);
     } on CacheException catch (e) {

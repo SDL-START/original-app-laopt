@@ -141,6 +141,17 @@ class AddMemberModal extends StatelessWidget {
                                 errorText: LocaleKeys.kRequiredField.tr())
                           ]),
                         ),
+                        PTDropdownField<Dropdowns>(
+                          name: 'gender',
+                          decoration: InputDecoration(
+                              labelText: "${LocaleKeys.kGender.tr()} *"),
+                          source: listGender,
+                          valueTransformer: (Dropdowns? value) => value?.value,
+                          validator: FormBuilderValidators.compose([
+                            FormBuilderValidators.required(
+                                errorText: LocaleKeys.kRequiredField.tr())
+                          ]),
+                        ),
                         PTCustomTextField(
                           name: 'phone',
                           autovalidateMode: AutovalidateMode.onUserInteraction,
@@ -148,7 +159,7 @@ class AddMemberModal extends StatelessWidget {
                             labelText: LocaleKeys.kPhone.tr(),
                           ),
                         ),
-                         PTCustomTextField(
+                        PTCustomTextField(
                           name: 'email',
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           decoration: InputDecoration(
@@ -175,7 +186,7 @@ class AddMemberModal extends StatelessWidget {
                           fileType: FileType.passport,
                         ),
                         AddImageWidget(
-                          description: 'Upload vaccine card photo',
+                          description: 'Upload Visa card photo',
                           title: LocaleKeys.kVaccine.tr(),
                           fileType: FileType.vaccine,
                         ),

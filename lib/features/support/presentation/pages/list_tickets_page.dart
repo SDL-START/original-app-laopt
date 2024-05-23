@@ -19,6 +19,7 @@ class ListTicketPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(LocaleKeys.kListTicket.tr()),
       ),
       body: Container(
@@ -92,10 +93,12 @@ class ListTicketPage extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(Utils.formatDate(
-                                          ticket.updatedAt?.toLocal().toIso8601String())),
-                                      Text(Utils.formatTime(
-                                          ticket.createdAt?.toLocal().toIso8601String())),
+                                      Text(Utils.formatDate(ticket.updatedAt
+                                          ?.toLocal()
+                                          .toIso8601String())),
+                                      Text(Utils.formatTime(ticket.createdAt
+                                          ?.toLocal()
+                                          .toIso8601String())),
                                     ],
                                   ),
                                 ],

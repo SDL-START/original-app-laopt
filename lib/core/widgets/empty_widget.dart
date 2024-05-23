@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:insuranceapp/generated/assets.dart';
+import 'package:insuranceapp/generated/locale_keys.g.dart';
 
 class EmptyWidget extends StatelessWidget {
   final String? message;
@@ -15,7 +17,9 @@ class EmptyWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SvgPicture.asset(Assets.imagesEmptyBox, height: 80),
-            Text(message ?? "Empty"),
+            Text(
+              message ?? LocaleKeys.KEmpty.tr(),
+            ),
           ],
         ),
       ),

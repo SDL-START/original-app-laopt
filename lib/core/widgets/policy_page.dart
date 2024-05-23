@@ -32,8 +32,10 @@ class _PolicyPageState extends State<PolicyPage> {
         padding: const EdgeInsets.all(10),
         child: InAppWebView(
           initialUrlRequest: URLRequest(
-              url: Uri.parse(
-                  '${APIPath.baseUrl}/policy-${Utils.convertCode(context: context)}.html?1=1')),
+            url: Uri.parse(
+              '${APIPath.baseUrl}/policy-${Utils.convertCode(context: context)}.html?1=1',
+            ),
+          ),
         ),
       ),
       floatingActionButton: widget.onPressed == null

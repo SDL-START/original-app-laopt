@@ -96,7 +96,7 @@ class BuyInsuranceCubit extends Cubit<BuyInsuranceState> {
 
   Future<void> getCurrentUser() async {
     emit(state.copyWith(status: DataStatus.loading));
-    final localUser =  _getUserLocalUsecase(NoParams());
+    final localUser = _getUserLocalUsecase(NoParams());
     final user = await _getUserByIdUsecase(localUser.id ?? 0);
     if (user.isLeft()) {
       emit(state.copyWith(
@@ -112,8 +112,10 @@ class BuyInsuranceCubit extends Cubit<BuyInsuranceState> {
       userMap['photortpcr'] = userPhoto?.photortpcr;
       userMap['photoprofile'] = userPhoto?.photoprofile;
       final currentUser = User.fromJson(userMap);
-      emit(
-          state.copyWith(status: DataStatus.success, currentUser: currentUser));
+      emit(state.copyWith(
+        status: DataStatus.success,
+        currentUser: currentUser,
+      ));
     }
   }
 

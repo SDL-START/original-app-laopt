@@ -15,7 +15,7 @@ class PTCustomButton extends StatelessWidget {
         padding: const EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: AppColors.primaryColor.withOpacity(0.9),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(5),
         ),
         child: (icon != null)
             ? Row(
@@ -51,8 +51,9 @@ class PTCustomButton extends StatelessWidget {
     );
   }
 }
+
 extension StringUtil on String? {
   String get optional {
-    return this??"";
+    return this ?? "";
   }
 }

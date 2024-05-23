@@ -8,8 +8,9 @@
 
 // void main() async {
 //   FlavorConfig(name: "Development", variables: {
-//     // "baseUrl": "https://devapi.laospt.com",
-//     "baseUrl": "https://api-app-onef.onrender.com",
+//     "baseUrl": "https://devapi.laospt.com",
+//     // "baseUrl": "https://api-app-onef.onrender.com",
+//     // "baseUrl": "https://uapi.laospt.com/",
 //   });
 //   await configureDependencies();
 //   Logger logger = Logger(

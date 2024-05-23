@@ -33,13 +33,15 @@ class MyInsurancePage extends StatelessWidget {
                   return Column(
                     children: [
                       ListTile(
-                        contentPadding:const EdgeInsets.only(top: 10,bottom: 10),
+                        contentPadding:
+                            const EdgeInsets.only(top: 10, bottom: 10),
                         leading: Container(
-                          padding:const EdgeInsets.all(5),
+                          padding: const EdgeInsets.all(5),
                           width: 60,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Utils.getPaymentColorByStatus(item.status ?? ''),
+                            color: Utils.getPaymentColorByStatus(
+                                item.status ?? ''),
                           ),
                           child: Center(
                             child: Column(
@@ -86,18 +88,21 @@ class MyInsurancePage extends StatelessWidget {
                                 '${Utils.formatNumber(item.amount ?? 0)} ₭',
                                 textAlign: TextAlign.right,
                                 style: TextStyle(
-                                  color: Utils.getPaymentColorByStatus(item.status!),
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 15,
+                                  color: Utils.getPaymentColorByStatus(
+                                      item.status!),
                                 ),
+                              ),
+                              SizedBox(
+                                height: 10,
                               ),
                               Container(
                                 decoration: BoxDecoration(
-                                  color: Utils.getPaymentColorByStatus(item.status!),
-                                  borderRadius: BorderRadius.circular(25),
+                                  color: Utils.getPaymentColorByStatus(
+                                      item.status!),
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
                                 padding: const EdgeInsets.only(
-                                    left: 4, right: 4, top: 1, bottom: 1),
+                                    left: 4, right: 4, top: 4, bottom: 4),
                                 margin: const EdgeInsets.only(top: 4),
                                 child: Text(
                                   item.status!,
@@ -105,7 +110,8 @@ class MyInsurancePage extends StatelessWidget {
                                   style: TextStyle(
                                     color: Colors.white,
                                     backgroundColor:
-                                        Utils.getPaymentColorByStatus(item.status!),
+                                        Utils.getPaymentColorByStatus(
+                                            item.status!),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 10,
                                   ),
@@ -114,8 +120,9 @@ class MyInsurancePage extends StatelessWidget {
                             ],
                           ),
                         ),
-                        onTap: (){
-                          AppNavigator.navigateTo(AppRoute.myInsuranceDetail,params: item);
+                        onTap: () {
+                          AppNavigator.navigateTo(AppRoute.myInsuranceDetail,
+                              params: item);
                         },
                       ),
                       const Divider(),

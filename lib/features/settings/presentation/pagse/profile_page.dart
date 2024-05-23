@@ -34,7 +34,6 @@ class ProfilePage extends StatelessWidget {
           title: Text(LocaleKeys.kProfile.tr()),
           actions: [
             TextButton(
-            
                 onPressed: () async {
                   await cubit.onSaveProfile();
                 },
@@ -356,7 +355,8 @@ class ProfilePage extends StatelessWidget {
                                 UploadDocsWidget(
                                   isRequired: true,
                                   label: LocaleKeys.kPassportNo.tr(),
-                                  description: "Upload your passport photo",
+                                  description:
+                                      LocaleKeys.kUploadyourpassport.tr(),
                                   url: state.passportPhoto,
                                   onTap: () {
                                     AppNavigator.showModalPopupPhoto(
@@ -381,7 +381,7 @@ class ProfilePage extends StatelessWidget {
 
                                 UploadDocsWidget(
                                   label: LocaleKeys.kVaccine.tr(),
-                                  description: "Upload your vaccine card photo",
+                                  description: LocaleKeys.kUploadyourvisa.tr(),
                                   url: state.vaccinePhoto,
                                   onTap: () {
                                     AppNavigator.showModalPopupPhoto(
@@ -406,7 +406,7 @@ class ProfilePage extends StatelessWidget {
 
                                 UploadDocsWidget(
                                   label: LocaleKeys.kRTPCR.tr(),
-                                  description: "Upload your RTPCR card photo",
+                                  description: LocaleKeys.kDocumentphoto.tr(),
                                   url: state.RTPCRPhoto,
                                   onTap: () {
                                     AppNavigator.showModalPopupPhoto(

@@ -17,121 +17,125 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        image: DecorationImage(
-            image: AssetImage(Assets.imagesBg),
-            fit: BoxFit.fill,
-            opacity: 0.9),
-      ),
-      child: BlocBuilder<LoginCubit, LoginState>(
-        builder: (context, state) {
-          if (state.status == DataStatus.loading) {
-            return const LoadingWidget();
-          } else if (state.status == DataStatus.failure) {
-            return FailureWidget(message: state.error);
-          }
-          return Scaffold(
-            backgroundColor: Colors.transparent,
-            floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
-            floatingActionButton: FloatingActionButton(
-              child: const Icon(Icons.language_outlined),
-              onPressed: () async {
-                await AppNavigator.navigateToWithData(AppRoute.langRoute);
-              },
-            ),
-            body: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              left: 24, top: 32, right: 24),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image.asset(Assets.imagesLogoInsurance, height: 200),
-                              const SizedBox(height: 15),
-                              Text(
-                                LocaleKeys.kCompanyName.tr(),
-                                style: const TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
+    return Scaffold(
+      body: Container(
+        // decoration: const BoxDecoration(
+        //   color: Colors.white,
+        //   image: DecorationImage(
+        //       image: AssetImage(Assets.imagesBg),
+        //       fit: BoxFit.fill,
+        //       opacity: 0.9),
+        // ),
+        child: BlocBuilder<LoginCubit, LoginState>(
+          builder: (context, state) {
+            if (state.status == DataStatus.loading) {
+              return const LoadingWidget();
+            } else if (state.status == DataStatus.failure) {
+              return FailureWidget(message: state.error);
+            }
+            return Scaffold(
+              backgroundColor: Colors.transparent,
+              floatingActionButtonLocation:
+                  FloatingActionButtonLocation.startTop,
+              floatingActionButton: FloatingActionButton(
+                child: const Icon(Icons.language_outlined),
+                onPressed: () async {
+                  await AppNavigator.navigateToWithData(AppRoute.langRoute);
+                },
+              ),
+              body: SafeArea(
+                child: Column(
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+                        child: Column(
+                          // crossAxisAlignment: CrossAxisAlignment.center,
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          // crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(Assets.imagesLogoInsurance, height: 90),
+                            const SizedBox(height: 15),
+                            Text(
+                              LocaleKeys.kCompanyName.tr(),
+                              style: const TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                            ),
+                            const SizedBox(height: 30),
+                            PTCustomButton(
+                              label: LocaleKeys.kLoginWithEmail.tr(),
+                              onTap: () {
+                                AppNavigator.navigateTo(
+                                    AppRoute.loginDetailRoute,
+                                    params: false);
+                              },
+                            ),
+                            const SizedBox(height: 15),
+                            PTCustomButton(
+                              label: LocaleKeys.kLoginWithPhone.tr(),
+                              onTap: () {
+                                AppNavigator.navigateTo(
+                                    AppRoute.loginDetailRoute,
+                                    params: true);
+                              },
+                            ),
+                            const SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  LocaleKeys.kDontHaveAnAccount.tr(),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium
+                                      ?.copyWith(
+                                          color: Colors.black, fontSize: 16),
                                 ),
-                              ),
-                              const SizedBox(height: 30),
-                              PTCustomButton(
-                                label: LocaleKeys.kLoginWithEmail.tr(),
-                                onTap: () {
-                                  AppNavigator.navigateTo(
-                                      AppRoute.loginDetailRoute,
-                                      params: false);
-                                },
-                              ),
-                              const SizedBox(height: 15),
-                              PTCustomButton(
-                                label: LocaleKeys.kLoginWithPhone.tr(),
-                                onTap: () {
-                                  AppNavigator.navigateTo(
-                                      AppRoute.loginDetailRoute,
-                                      params: true);
-                                },
-                              ),
-                              const SizedBox(height: 20),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    LocaleKeys.kDontHaveAnAccount.tr(),
+                                const SizedBox(width: 2),
+                                TextButton(
+                                  onPressed: () {
+                                    AppNavigator.navigateTo(
+                                        AppRoute.registerRoute);
+                                  },
+                                  child: Text(
+                                    LocaleKeys.kRegister.tr(),
                                     style: Theme.of(context)
                                         .textTheme
-                                        .bodyMedium
-                                        ?.copyWith(
-                                            color: Colors.white, fontSize: 16),
+                                        .headlineSmall
+                                        ?.copyWith(color: Colors.red),
                                   ),
-                                  const SizedBox(width: 2),
-                                  TextButton(
-                                    onPressed: () {
-                                      AppNavigator.navigateTo(
-                                          AppRoute.registerRoute);
-                                    },
-                                    child: Text(
-                                      LocaleKeys.kRegister.tr(),
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .headlineSmall
-                                          ?.copyWith(color: Colors.red),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
+                                )
+                              ],
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 20, bottom: 15),
-                      child: Text(
-                        LocaleKeys.kVersion
-                            .tr(args: ["${state.packageInfo?.version} - ${state.packageInfo?.buildNumber}"]),
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 16),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 20, bottom: 15),
+                        child: Text(
+                          LocaleKeys.kVersion.tr(args: [
+                            "${state.packageInfo?.version} - ${state.packageInfo?.buildNumber}"
+                          ]),
+                          style: const TextStyle(
+                              color: Colors.black, fontSize: 16),
+                        ),
                       ),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }

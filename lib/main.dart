@@ -2,13 +2,20 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_flavor/flutter_flavor.dart';
 import 'package:logger/logger.dart';
-
 import 'app.dart';
 import 'core/DI/service_locator.dart';
 
 void main() async {
   FlavorConfig(name: "Production", variables: {
-    "baseUrl": "https://api.laospt.com",
+    // "baseUrl": "https://api.laospt.com",
+    //url ທົດລອງ
+    // "baseUrl": "https://uapi.laospt.com/",
+    //connect to nodejs
+    //5000 port node js
+    "baseUrl": "http://192.168.61.154:5000",
+
+    //url ຂອງແທ້
+    // "baseUrl": "https://prodapi.laospt.com",
   });
   await configureDependencies();
   Logger logger = Logger(

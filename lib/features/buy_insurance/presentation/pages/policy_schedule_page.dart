@@ -24,8 +24,9 @@ class PolicyShedulePage extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: InAppWebView(
           initialUrlRequest: URLRequest(
-              url: Uri.parse(
-                  '${APIPath.baseUrl}/policy-${Utils.convertCode(context: context)}.html?1=1')),
+            url: Uri.parse(
+                '${APIPath.baseUrl}/policy-${Utils.convertCode(context: context)}.html?1=1'),
+          ),
         ),
       ),
       floatingActionButton: BlocBuilder<BuyInsuranceCubit, BuyInsuranceState>(
@@ -41,7 +42,7 @@ class PolicyShedulePage extends StatelessWidget {
             );
           }
           return FloatingActionButton.extended(
-            onPressed: () async{
+            onPressed: () async {
               await context.read<BuyInsuranceCubit>().createCertificate();
             },
             label: Text(LocaleKeys.kAcceptedTerms.tr()),

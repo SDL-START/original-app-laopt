@@ -5,7 +5,6 @@ import 'package:insuranceapp/core/models/change_password.dart';
 import 'package:insuranceapp/core/models/province.dart';
 import 'package:insuranceapp/core/network/network_call.dart';
 import 'package:insuranceapp/core/services/shared_preferance_service.dart';
-
 import '../../../../core/models/purpose.dart';
 import '../../../../core/models/response_data.dart';
 import '../../../../core/models/user.dart';
