@@ -87,10 +87,12 @@ class ClaimPage extends StatelessWidget {
                           ListTile(
                             leading: CachedNetworkImage(
                               errorWidget: (context, url, error) {
-                                return Image.asset(Assets.imagesPlaceholderImage);
+                                return Image.asset(
+                                    Assets.imagesPlaceholderImage);
                               },
-                              imageUrl:
-                                  Utils.onGenerateImageUrl(url: item.photo?[0]),
+                              imageUrl: Utils.onGenerateImageUrl(
+                                url: item.photo?[0],
+                              ),
                               width: 60,
                             ),
                             title: Text(

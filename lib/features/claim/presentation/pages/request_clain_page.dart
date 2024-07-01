@@ -20,6 +20,7 @@ class RequestClaimPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cubit = context.read<ClaimCubit>();
+    print("Hello ----->{$cubit}");
     return Scaffold(
       resizeToAvoidBottomInset: true,
       appBar: AppBar(

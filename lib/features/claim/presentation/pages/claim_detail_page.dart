@@ -14,7 +14,10 @@ import '../cubit/claim_cubit.dart';
 
 class ClaimDetailPage extends StatelessWidget {
   final Claim claim;
-  const ClaimDetailPage({super.key, required this.claim});
+  const ClaimDetailPage({
+    super.key,
+    required this.claim,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +78,7 @@ class ClaimDetailPage extends StatelessWidget {
                       itemBuilder: (context, index) {
                         final url = claim.photo?[index] as String;
                         return CachedNetworkImage(
-                          imageUrl:Utils.onGenerateImageUrl(url: url),
+                          imageUrl: Utils.onGenerateImageUrl(url: url),
                           width: 140,
                           height: 140,
                           fit: BoxFit.contain,
@@ -113,8 +116,11 @@ class ClaimDetailPage extends StatelessWidget {
                   Column(
                     children: state.listClaimLog.map((log) {
                       return ListTile(
-                        title: Text(Utils.formatDateTime(
-                            log.txtime?.toIso8601String())),
+                        title: Text(
+                          Utils.formatDateTime(
+                            log.txtime?.toIso8601String(),
+                          ),
+                        ),
                         subtitle: Text(log.remark ?? ""),
                         trailing: Container(
                           padding: const EdgeInsets.only(

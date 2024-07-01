@@ -1,22 +1,15 @@
-import 'dart:math';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insuranceapp/core/constants/constant.dart';
-import 'package:insuranceapp/core/entities/webview_params.dart';
 import 'package:insuranceapp/core/utils/app_navigator.dart';
 import 'package:insuranceapp/core/utils/router.dart';
 import 'package:insuranceapp/core/widgets/loading_widget.dart';
 import 'package:insuranceapp/core/widgets/policy_en.dart';
 import 'package:insuranceapp/features/settings/presentation/cubit/settings_cubit.dart';
-import 'package:insuranceapp/features/settings/presentation/pagse/profile_page.dart';
 import 'package:insuranceapp/features/settings/presentation/widgets/setting_item.dart';
+import 'package:insuranceapp/features/travel/pages/dashoard_travel.dart';
 import 'package:insuranceapp/generated/locale_keys.g.dart';
-
-import '../../../../core/constants/api_path.dart';
-import '../../../../core/utils/utils.dart';
-import '../../../../generated/assets.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -105,29 +98,31 @@ class _SettingsPageState extends State<SettingsPage> {
                         },
                       ),
                       const SizedBox(height: 10),
-                      SettingsItem(
-                        icon: Icons.policy_outlined,
-                        title: LocaleKeys.kPolicy.tr(),
-                        onTap: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => PolicyEn(),
-                          //   ),
-                          // );
+                      // SettingsItem(
+                      //   icon: Icons.policy_outlined,
+                      //   title: LocaleKeys.kPolicy.tr(),
+                      //   onTap: () {
+                      //     Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //         // builder: (context) => PolicyEn(),
+                      //         builder: (context) => DashoardTravel(),
+                      //       ),
+                      //     );
 
-                          MaterialPageRoute(
-                              builder: (context) => ProfilePage());
-                          AppNavigator.navigateTo(
-                            AppRoute.myWebviewRoute,
-                            params: WebviewParams(
-                              label: LocaleKeys.kPolicy.tr(),
-                              url:
-                                  '${APIPath.baseUrl}/policy-${Utils.convertCode(context: context)}.html?1=1',
-                            ),
-                          );
-                        },
-                      ),
+                      //     // MaterialPageRoute(
+                      //     //   builder: (context) => ProfilePage(),
+                      //     // );
+                      //     // AppNavigator.navigateTo(
+                      //     //   AppRoute.myWebviewRoute,
+                      //     //   params: WebviewParams(
+                      //     //     label: LocaleKeys.kPolicy.tr(),
+                      //     //     url:
+                      //     //         '${APIPath.baseUrl}/policy-${Utils.convertCode(context: context)}.html?1=1',
+                      //     //   ),
+                      //     // );
+                      //   },
+                      // ),
                       const SizedBox(height: 15),
                       SettingsItem(
                         icon: Icons.exit_to_app,

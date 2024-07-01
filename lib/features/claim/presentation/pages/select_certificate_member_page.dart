@@ -31,13 +31,15 @@ class SelectCertificateMemberPage extends StatelessWidget {
                         subtitle: Text(
                             '${Utils.formatDate(member.dob)} ${member.relation}'),
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) =>
-                                BlocProvider<ClaimCubit>.value(
-                              value: cubit..setCerrentMember(member),
-                              child: const RequestClaimPage(),
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  BlocProvider<ClaimCubit>.value(
+                                value: cubit..setCerrentMember(member),
+                                child: const RequestClaimPage(),
+                              ),
                             ),
-                          ));
+                          );
                         },
                       );
                     }).toList() ??

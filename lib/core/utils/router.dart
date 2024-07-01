@@ -5,6 +5,7 @@ import 'package:insuranceapp/core/models/certificate.dart';
 import 'package:insuranceapp/core/models/insurance.dart';
 import 'package:insuranceapp/core/models/sos_logs.dart';
 import 'package:insuranceapp/core/params/policy_schedule_params.dart';
+import 'package:insuranceapp/core/widgets/policy_en.dart';
 import 'package:insuranceapp/core/widgets/pt_webview_page.dart';
 import 'package:insuranceapp/features/app/presentation/cubit/app_cubit.dart';
 import 'package:insuranceapp/features/app/presentation/pages/app_page.dart';
@@ -448,7 +449,8 @@ class AppRoute {
         );
       default:
         return MaterialPageRoute(
-          builder: (context) => const NotFound(),
+          // builder: (context) => const NotFound(),
+          builder: (context) => MyTabPage(),
         );
     }
   }

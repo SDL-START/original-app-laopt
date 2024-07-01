@@ -6,15 +6,18 @@ import 'dart:convert';
 
 List<ModelProvinceAll> modelProvinceAllFromJson(String str) =>
     List<ModelProvinceAll>.from(
-        json.decode(str).map((x) => ModelProvinceAll.fromJson(x)));
+      json.decode(str).map(
+            (x) => ModelProvinceAll.fromJson(x),
+          ),
+    );
 
 String modelProvinceAllToJson(List<ModelProvinceAll> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class ModelProvinceAll {
-  final int id;
-  final Name name;
-  final List<TourismCoverImage> tourismCoverImage;
+  int id;
+  Name name;
+  List<TourismCoverImage> tourismCoverImage;
 
   ModelProvinceAll({
     required this.id,
@@ -31,8 +34,6 @@ class ModelProvinceAll {
                 .map((x) => TourismCoverImage.fromJson(x))),
       );
 
-  get modelprovince => null;
-
   Map<String, dynamic> toJson() => {
         "id": id,
         "name": name.toJson(),
@@ -42,7 +43,7 @@ class ModelProvinceAll {
 }
 
 class Name {
-  final String us;
+  String us;
 
   Name({
     required this.us,
@@ -58,7 +59,7 @@ class Name {
 }
 
 class TourismCoverImage {
-  final String images;
+  String images;
 
   TourismCoverImage({
     required this.images,

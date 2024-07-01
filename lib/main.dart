@@ -7,12 +7,13 @@ import 'core/DI/service_locator.dart';
 
 void main() async {
   FlavorConfig(name: "Production", variables: {
-    // "baseUrl": "https://api.laospt.com",
+    //my id 2803
+    "baseUrl": "https://api.laospt.com",
     //url ທົດລອງ
     // "baseUrl": "https://uapi.laospt.com/",
     //connect to nodejs
     //5000 port node js
-    "baseUrl": "http://192.168.61.154:5000",
+    // "baseUrl": "http://192.168.1.9:5000",
 
     //url ຂອງແທ້
     // "baseUrl": "https://prodapi.laospt.com",

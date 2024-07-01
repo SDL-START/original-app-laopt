@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+// import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:insuranceapp/core/models/certificate_member.dart';
 import 'package:insuranceapp/generated/locale_keys.g.dart';
 
@@ -30,12 +30,14 @@ class PolicySchedulePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(10),
-        child: InAppWebView(
-          onProgressChanged: (controller, progress) {
-            // print(progress);
-          },
-          initialUrlRequest: URLRequest(url: Uri.parse(url)),
-        ),
+
+        ///lllllll
+        // child: InAppWebView(
+        //   onProgressChanged: (controller, progress) {
+        //     // print(progress);
+        //   },
+        //   initialUrlRequest: URLRequest(url: Uri.parse(url)),
+        // ),
       ),
     );
   }

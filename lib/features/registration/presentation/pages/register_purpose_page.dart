@@ -86,16 +86,16 @@ class RegisterPurposePage extends StatelessWidget {
                       ]),
                       valueTransformer: (value) => value?.toIso8601String(),
                     ),
-                    PTCustomTextField(
-                      name: 'passport',
-                      decoration: InputDecoration(
-                        labelText: LocaleKeys.kPassportNo.tr(),
-                      ),
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(
-                            errorText: LocaleKeys.kRequiredField.tr())
-                      ]),
-                    ),
+                    // PTCustomTextField(
+                    //   name: 'passport',
+                    //   decoration: InputDecoration(
+                    //     labelText: LocaleKeys.kPassportNo.tr(),
+                    //   ),
+                    //   validator: FormBuilderValidators.compose([
+                    //     FormBuilderValidators.required(
+                    //         errorText: LocaleKeys.kRequiredField.tr())
+                    //   ]),
+                    // ),
                     // PTCustomTextField(
                     //   name: 'ປະເພດ visa',
                     //   decoration: InputDecoration(
@@ -106,46 +106,46 @@ class RegisterPurposePage extends StatelessWidget {
                     //         errorText: LocaleKeys.kRequiredField.tr())
                     //   ]),
                     // ),
-                    PTCustomTextField(
-                      name: 'city',
-                      decoration: InputDecoration(
-                        labelText: LocaleKeys.kCity.tr(),
-                      ),
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(
-                            errorText: LocaleKeys.kRequiredField.tr())
-                      ]),
-                    ),
-                    PTCustomTextField(
-                      name: 'address',
-                      decoration: InputDecoration(
-                        labelText: LocaleKeys.kAddress.tr(),
-                      ),
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(
-                            errorText: LocaleKeys.kRequiredField.tr())
-                      ]),
-                    ),
-                    PTDropdownField<Dropdowns>(
-                      name: 'purpose',
-                      decoration: InputDecoration(
-                        labelText: LocaleKeys.kPurposeOfVisit.tr(),
-                      ),
-                      source: cubit.listPurposes,
-                      valueTransformer: (Dropdowns? value) => value?.value,
-                      validator: FormBuilderValidators.compose([
-                        FormBuilderValidators.required(
-                            errorText: LocaleKeys.kRequiredField.tr())
-                      ]),
-                    ),
-                    PTDropdownField<Dropdowns>(
-                      name: 'provinceid',
-                      decoration: InputDecoration(
-                        labelText: LocaleKeys.kProvince.tr(),
-                      ),
-                      source: cubit.listProvinces,
-                      valueTransformer: (Dropdowns? value) => value?.value,
-                    ),
+                    // PTCustomTextField(
+                    //   name: 'city',
+                    //   decoration: InputDecoration(
+                    //     labelText: LocaleKeys.kCity.tr(),
+                    //   ),
+                    //   validator: FormBuilderValidators.compose([
+                    //     FormBuilderValidators.required(
+                    //         errorText: LocaleKeys.kRequiredField.tr())
+                    //   ]),
+                    // ),
+                    // PTCustomTextField(
+                    //   name: 'address',
+                    //   decoration: InputDecoration(
+                    //     labelText: LocaleKeys.kAddress.tr(),
+                    //   ),
+                    //   validator: FormBuilderValidators.compose([
+                    //     FormBuilderValidators.required(
+                    //         errorText: LocaleKeys.kRequiredField.tr())
+                    //   ]),
+                    // ),
+                    // PTDropdownField<Dropdowns>(
+                    //   name: 'purpose',
+                    //   decoration: InputDecoration(
+                    //     labelText: LocaleKeys.kPurposeOfVisit.tr(),
+                    //   ),
+                    //   source: cubit.listPurposes,
+                    //   valueTransformer: (Dropdowns? value) => value?.value,
+                    //   validator: FormBuilderValidators.compose([
+                    //     FormBuilderValidators.required(
+                    //         errorText: LocaleKeys.kRequiredField.tr())
+                    //   ]),
+                    // ),
+                    // PTDropdownField<Dropdowns>(
+                    //   name: 'provinceid',
+                    //   decoration: InputDecoration(
+                    //     labelText: LocaleKeys.kProvince.tr(),
+                    //   ),
+                    //   source: cubit.listProvinces,
+                    //   valueTransformer: (Dropdowns? value) => value?.value,
+                    // ),
                   ],
                 ),
               ),

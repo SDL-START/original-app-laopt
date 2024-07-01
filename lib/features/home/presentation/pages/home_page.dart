@@ -130,7 +130,7 @@ class HomePage extends StatelessWidget {
                       ),
                       itemBuilder: (context, index) {
                         final item = state.listMenu?[index];
-
+                        print('Hello soumdee11111 {$item}');
                         print("hello {$item}");
                         return InkWell(
                           child: Container(
