@@ -40,4 +40,4 @@ flutter pub run flutter_native_splash:create --path=path/to/my/file.yaml
 - Android
 ```
 ./build_app.sh
-```
+```# APP-LAOSPT
